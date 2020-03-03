@@ -1,0 +1,20 @@
+{
+  "name": "node-red-contrib-xbox-on",
+  "version": "0.1.0",
+  "description": "A node for turning on an Xbox One on a local network.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bartosz Nitka <niteria@gmail.com>",
+  "license": "MIT",
+  "repository": "github:niteria/node-red-contrib-xbox-on",
+  "dependencies": {
+    "xbox-on": "^0.0.10"
+  },
+  "keywords": [ "node-red" ],
+  "node-red": {
+    "nodes": {
+      "xbox-on": "xbox-on.js"
+    }
+  }
+}

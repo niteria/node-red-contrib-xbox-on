@@ -1,0 +1,66 @@
+<script type="text/javascript">
+    RED.nodes.registerType('xbox-on',{
+        category: 'network',
+        color: '#d8bfd8',
+        defaults: {
+            name: {value: ""},
+            numTries: {value: ""},
+            delay: {value: ""}
+        },
+        credentials: {
+            ip: {type: "text", required: true},
+            deviceId: {type: "text", required: true}
+        },
+        inputs: 1,
+        outputs: 0,
+        icon: "bridge.png",
+        label: function() {
+            return this.name||"Xbox On";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="xbox-on">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-ip"><i class="icon-tag"></i> IP</label>
+        <input type="text" id="node-input-ip" placeholder="Xbox One IP Address">
+    </div>
+    <div class="form-row">
+        <label for="node-input-deviceId"><i class="icon-tag"></i> Device ID</label>
+        <input type="text" id="node-input-deviceId" placeholder="Xbox One Live Device ID">
+    </div>
+    <div class="form-row">
+        <label for="node-input-numTries"><i class="icon-tag"></i> Number of tries</label>
+        <input type="text" id="node-input-numTries" placeholder="Default is 5">
+    </div>
+    <div class="form-row">
+        <label for="node-input-delay"><i class="icon-tag"></i> Delay between tries (ms)</label>
+        <input type="text" id="node-input-delay" placeholder="Default is 1000 (1s)">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="xbox-on">
+    <p>A node for turning on an Xbox One on a local network.</p>
+    <h3>Details</h3>
+    <p>This node ignores the payloads and wakes an Xbox One over the local
+    network whenever a message is received.</p>
+    <p>The IP property is the IP of the Xbox and can be found on your Xbox at
+    Settings > Network > Network Settings > Advanced Settings.</p>
+    <p>The Device ID property is the Xbox One Live Device ID and can be found on
+    your Xbox at Settings > System > Console info & updates and under
+    &quot;Xbox Live device ID&quot;.</p>
+    <p>Note that it&apos;s a good idea to configure your router to give your
+    Xbox One a static IP for this to work reliably.</p>
+    <h3>References</h3>
+    <ul>
+      <li>arcreative&apos;s <a href="https://github.com/arcreative/xbox-on">xbox-on</a>
+      library this is based on</li>
+      <li>A <a href="https://github.com/Schamper/xbox-remote-power">python library</a>
+      implementing the same thing</li>
+    </ul>
+
+</script>
